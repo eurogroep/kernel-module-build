@@ -1,11 +1,11 @@
 KERNEL_TREE_PATH?=/lib/modules/$(shell uname -r)/build
 EXTRA_CFLAGS="-DDEBUG"
 
-obj-m+=hello.o
+obj-m+=vcan.o
 
-all: hello.ko
+all: vcan.ko
 
-hello.ko: hello.c
+vcan.ko: vcan.c
 	make -C $(KERNEL_TREE_PATH) M=$(PWD) modules
 
 clean:
